@@ -2,6 +2,14 @@ import { GeneratorProvider } from "./GeneratorContext";
 import GeneratorOptions from "./GeneratorOptions";
 import MapDisplay from "./MapDisplay";
 
+await fetch('http://localhost:8000/api/generate-map.php', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ seed: 42, frequency: 0.05 })
+})
+.then(res => res.json())
+.then(data => console.log(data));
+
 export default function GeneratorApp() {
     return (
         <GeneratorProvider>

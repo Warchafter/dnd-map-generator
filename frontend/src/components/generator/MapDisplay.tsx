@@ -14,7 +14,7 @@ export default function MapDisplay() {
                     ({generatorType === 'svg' ? 'SVG Filter' : 'Canvas Noise'})
                 </span>
             </div>
-            <div className="flex flex-col gap-8">
+            <div className="flex flex-col gap-8 overflow-hidden">
                 {generatorType === 'canvas' ? (
                     <TerrainGenerator />
                 ) : (
