@@ -1,8 +1,9 @@
 import { GeneratorProvider } from "./GeneratorContext";
 import GeneratorOptions from "./GeneratorOptions";
 import MapDisplay from "./MapDisplay";
+import { config } from "../../config";
 
-await fetch('http://localhost:8000/api/generate-map.php', {
+await fetch(`${config.apiUrl}/api/generate-map.php`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ seed: 42, frequency: 0.05 })
